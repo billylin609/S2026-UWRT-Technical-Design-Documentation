@@ -1,0 +1,65 @@
+\section{Introduction}
+\label{sec:intro}
+
+This documentation provides an in-depth technical review of the UW Robotics team's development process for our new rover platform, Sparky. The objectives of this documentation are as follows:
+
+\begin{enumerate}
+    \item Provide in-depth analysis of each competition mission
+    \item Evaluate possible technologies and solutions proposed to address each mission
+    \item Document the rover design, system characterization, and design variants
+    \item Provide a reference manual for future UW Robotics members to reproduce the platform with a comprehensive understanding of system capabilities
+\end{enumerate}
+
+This document is organized into the following sections:
+
+\begin{itemize}
+    \item Problem Definition
+    \begin{itemize}
+        \item Mission Requirements
+        \item Mission Analysis
+        \item Solution Proposal
+    \end{itemize}
+    \item Environment Setup
+    \begin{itemize}
+        \item Development and DevOps Setup
+        \item System Setup
+        \item Testing and Validation
+    \end{itemize}
+    \item System Design
+    \begin{itemize}
+        \item Baseline Performance
+        \item Design Notes
+        \item Implementation Details
+    \end{itemize}
+    \item Maintenance Log
+\end{itemize}
+
+\textbf{All systems are deployed with appropriate isolation.} We emphasize utilizing technologies such as \texttt{python-venv} and \texttt{conda}. Additionally, following the practices established in existing Python projects, project folders should adhere to the template structure shown in Figure \ref{fig:project_structure}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{mdframed}
+        \dirtree{%
+            .1 project/.
+            .2 .git/workflows/.
+            .2 src/.
+            .3 nodes/ \quad (ROS nodes).
+            .3 lib/ \quad (algorithms).
+            .2 inc/ \quad (C++ headers).
+            .2 mod/ \quad (Python modules).
+            .2 common/ \quad (baseline implementations \& metrics).
+            .2 config/ \quad (YAML/JSON configuration).
+            .2 tests/ \quad (unit \& integration tests).
+            .2 thirdparty/ \quad (ported dependencies).
+            .2 docs/.
+            .2 launch/ \quad (ROS launch files).
+            .2 .gitignore.
+            .2 Makefile, CMakeLists.txt, package.xml, setup.py.
+            .2 README.md.
+        }
+    \end{mdframed}
+    \caption{Project structure for UWaterloo robotics projects. This structure derived from standard ROS conventions with support for mixed Python and C++ development for any projects.}
+    \label{fig:project_structure}
+\end{figure}
+
+In summary, this documentation serves as a knowledge base and reference for future team members interested in contributing to the project.
