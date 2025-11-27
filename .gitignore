@@ -1,0 +1,10 @@
+# Ignore Intermediate Build File
+main.aux
+main.bbl
+main.blg
+main.brf
+main.fdb_latexmk
+main.fls
+main.log
+main.out
+main.synctex.gz
